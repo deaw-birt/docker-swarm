@@ -11,6 +11,9 @@ services:
       MYSQL_USER: joomla
       MYSQL_PASSWORD: joomla
       MYSQL_DATABASE: joomla
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
   # Servidor web con Joomla
   joomla:
@@ -27,4 +30,4 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.role == manager]
+        constraints: [node.role == worker]
