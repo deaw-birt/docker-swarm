@@ -4,7 +4,6 @@ services:
   # BBDD mysql para Joomla
   joomladb:
     image: mysql:5.7
-    restart: always
     ports:
       - 3306:3306
     environment:
@@ -16,7 +15,6 @@ services:
   # Servidor web con Joomla
   joomla:
     image: joomla
-    restart: always
     ports:
       - 80:80
     environment:
